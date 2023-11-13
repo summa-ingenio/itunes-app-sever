@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(helmet()); // Use Helmet middleware for security
 
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 app.use(express.json());
 
