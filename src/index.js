@@ -1,6 +1,6 @@
-import express from "express";
-import helmet from "helmet";
-import cors from "cors";
+const express = require("express");
+const helmet = require("helmet");
+const cors = require("cors");
 import fetch from "node-fetch";
 
 const app = express();
