@@ -1,7 +1,7 @@
-const express = require("express");
-const helmet = require("helmet");
-const cors = require("cors");
-const fetch = require("node-fetch");
+import express from "express";
+import helmet from "helmet";
+import cors from "cors";
+import fetch from "node-fetch";
 
 const app = express();
 
@@ -22,7 +22,8 @@ app.get("/api/search", async (req, res) => {
     const { term } = req.query;
 
     // Use fetch instead of axios
-    const response = await fetch(`${iTunesAPI}term=${term}`);
+    const response = await fetch.default(`${iTunesAPI}term=${term}`);
+
     const data = await response.json();
 
     res.json(data);
