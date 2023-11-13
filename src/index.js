@@ -5,7 +5,7 @@ const cors = require("cors");
 const app = express();
 
 // Enable CORS
-app.use(cors({ origin: "https://itunes-client-9389433d4071.herokuapp.com" }));
+app.use(cors());
 app.use(helmet()); // Use Helmet middleware for security
 
 const port = 3001;
