@@ -22,7 +22,7 @@ app.get("/api/search", async (req, res) => {
     const { term } = req.query;
 
     // Use fetch instead of axios
-    const response = await fetch.default(`${iTunesAPI}term=${term}`);
+    const response = await fetch(`${iTunesAPI}term=${term}`);
 
     const data = await response.json();
 
