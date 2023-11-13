@@ -1,7 +1,7 @@
 const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
-import fetch from "node-fetch";
+const fetch = require("node-fetch");
 
 const app = express();
 
