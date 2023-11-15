@@ -21,10 +21,12 @@ const limit = "10";
 // Endpoint to search iTunes
 app.get("/api/search", async (req, res) => {
   try {
-    const { term } = req.query;
+    const { term, media } = req.query;
 
     // Use fetch instead of axios
-    const response = await fetch(`${iTunesAPI}term=${term}&limit=${limit}`);
+    const response = await fetch(
+      `${iTunesAPI}term=${term}&entity=${media}&limit=${limit}`
+    );
 
     const data = await response.json();
 
