@@ -24,10 +24,13 @@ app.get("/api/search", async (req, res) => {
     const { term, media } = req.query;
 
     // Use fetch instead of axios
-    const response = await fetch(
-      `${iTunesAPI}term=${term}&entity=${media}&limit=${limit}`
-    );
+    let apiEndpoint = `${iTunesAPI}term=${term}&limit=${limit}`;
 
+    if (media) {
+      apiEndpoint += `&entity=${media}`;
+    }
+
+    const response = await fetch(apiEndpoint);
     const data = await response.json();
 
     res.json(data);
